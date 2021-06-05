@@ -10,7 +10,7 @@ const app = Vue.createApp({
         modelStatus: ""
       },
       productObj: {
-        imagesUrl: ""
+        imagesUrl: []
       }
     };
   },
@@ -31,18 +31,18 @@ const app = Vue.createApp({
       if (status == "create") {
         myProductModal.show();
         this.productObj = {
-          imagesUrl: ''
+          imagesUrl: []
         };
         this.modelObj.modelStatus = "新增";
       }
-      if (status == 'edit') {
+      else if (status == 'edit') {
         myProductModal.show();
         this.productObj = {
           ...item
         };
         this.modelObj.modelStatus = "編輯";
       }
-      if (status == 'delete') {
+      else if (status == 'delete') {
         myDeleteModal.show();
         this.productObj = {
           ...item
