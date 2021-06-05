@@ -30,7 +30,9 @@ const app = Vue.createApp({
     updateProduct (status, item) {
       if (status == "create") {
         myProductModal.show();
-        this.productObj.imagesUrl = '';
+        this.productObj = {
+          imagesUrl: ''
+        };
         this.modelObj.modelStatus = "新增";
       }
       if (status == 'edit') {
